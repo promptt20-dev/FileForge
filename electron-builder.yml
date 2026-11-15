@@ -1,0 +1,30 @@
+appId: com.fileforge.desktop
+productName: FileForge
+copyright: Copyright © 2026 FileForge
+directories:
+  output: release
+  buildResources: public/assets/aistudio
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - public/assets/aistudio/**/*
+  - package.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  icon: public/assets/aistudio/FileForge_logo_be1503bf.png
+  requestedExecutionLevel: asInvoker
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FileForge
+  artifactName: FileForge-Setup-${version}-${arch}.exe
+portable:
+  artifactName: FileForge-Portable-${version}-${arch}.exe
